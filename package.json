@@ -1,0 +1,29 @@
+{
+    "name": "minivault-api",
+    "version": "1.0.0",
+    "description": "Local-first AI API with Fastify and Ollama",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "cli": "node cli.js"
+    },
+    "keywords": [
+        "fastify",
+        "local-ai",
+        "ollama",
+        "api",
+        "cli",
+        "offline"
+    ],
+    "author": "Piyush Soni",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.6.8",
+        "dotenv": "^17.2.0",
+        "fastify": "^4.27.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}
