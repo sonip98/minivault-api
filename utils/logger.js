@@ -2,14 +2,21 @@
 const fs = require('fs');
 const path = require('path');
 
-const logFilePath = path.join(__dirname, '../logs/prompts.log');
+const logDir = path.join(__dirname, '..', 'logs');
+const logFile = path.join(logDir, 'log.jsonl');
 
-async function logInteraction(prompt, response) {
-  const timestamp = new Date().toISOString();
-  const logEntry = `${timestamp} | Prompt: ${prompt} | Response: ${response}\n`;
-  fs.appendFileSync(logFilePath, logEntry);
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
 }
 
-module.exports = {
-  logInteraction
-};
+async function logInteraction(prompt, response) {
+  const entry = {
+    timestamp: new Date().toISOString(),
+    prompt,
+    response
+  };
+
+  fs.appendFileSync(logFile, JSON.stringify(entry) + '\n');
+}
+
+module.exports = { logInteraction };

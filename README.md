@@ -18,12 +18,13 @@ This project uses:
 ---
 ## 🎥 Demo
 
-[Watch the MiniVault API demo video](https://screenrec.com/share/MqZacGF4Qh)
+[Watch the MiniVault API demo video](https://screenrec.com/share/um2boXhqdy)
 
 ## ✅ Features
 
 * `POST /generate` → Takes a prompt, returns an LLM-generated response.
-* Logs all prompts and responses to `./logs/interactions.log`.
+* Logs all prompts and responses to `./logs/log.jsonl`.
+* `GET /status` → Returns uptime and memory usage for health checks.
 * Uses Ollama locally, no internet/cloud LLMs involved.
 * Clean modular structure.
 * Optional: Command-line CLI.
@@ -119,7 +120,7 @@ minivault-api/
 │   ├── ollama.js          # Ollama API integration
 │   └── logger.js          # Log prompt/response to disk
 ├── logs/
-│   └── prompts.log   # Request/response logs
+│   └── log.jsonl   # Request/response logs
 ├── .env                 
 ├── cli.js                 # (Optional) CLI interface
 ├── Dockerfile             # Docker support

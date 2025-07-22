@@ -6,8 +6,9 @@ yarn-error.log*
 .env
 
 # Logs
-logs/
-*.log
+logs/*.log
+logs/*.jsonl
+!logs/
 
 # Runtime data
 pids
